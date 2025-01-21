@@ -3,6 +3,7 @@ import React , { useState } from 'react'
 // import Test from './React-test Day10/Test';
 import './App.css'
 import ChildComp from '../src/React-test Day11/ChildComp'
+import { Counter } from './React Day12/Counter';
 
 
 
@@ -32,7 +33,7 @@ export default function App() {
   return (
     <div className='parent' >
     
-    <input
+    {/* <input
         type="number"
         min="1"
         max="6"
@@ -42,8 +43,9 @@ export default function App() {
       />
        {error && <p className="error">{error}</p>} 
     <button className='roll' onClick={handleRollDice}> Roll</button>
-    <ChildComp  numDice={showDice}/>
+    <ChildComp  numDice={showDice}/> */}
     {/* <Test title={items[0].title} description={items[0].description} /> */}
+    <Counter/>
     </div>
   )
 }
