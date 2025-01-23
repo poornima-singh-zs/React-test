@@ -1,9 +1,7 @@
 
 import React , { useState } from 'react'
-// import Test from './React-test Day10/Test';
-import './App.css'
-import ChildComp from '../src/React-test Day11/ChildComp'
-// import "./Day13/Modal.css"
+
+// import './App.css'
 import Modal from '../src/Day13/Modal'
 
 
