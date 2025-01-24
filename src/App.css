@@ -1,80 +1,75 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+:root {
+  --color-blue: #4635b1;
+  --color-purple: #b771e5;
+  --color-green: #aeea94;
+  --color-yellow: #fffbca;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background: var(--color-purple);
+  height: 100vh;
+  width: 100vw;
+  gap: 5px;
 }
 
 .card {
-  padding: 2em;
+  background-color: var(--color-yellow);
+  display: grid;
+  place-items: center;
 }
 
-.read-the-docs {
-  color: #888;
-} */
-.parent {
-  
-  margin-top: 40px;
-  background-color: beige;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+button {
+  background-color: var(--color-green);
+  color: var(--color-blue);
 }
 
-input {
-  margin: 10px;
-  padding: 8px;
-  width: 200px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+span {
+  background-color: var(--color-purple);
+  color: var(--color-yellow);
+  padding: 4px 8px;
+  border-radius: 12px;
+  cursor: default;
 }
-
-.roll {
-  padding: 10px 20px;
-  margin-top: 10px;
-  font-size: 16px;
-  background-color: #637e65;
-  color: white;
-   width: 100px;
-  border-radius: 20px;
-  cursor: pointer;
-
+.tooltip-container {
+  position: relative;
 }
-
-
-.error {
-  color: red;
-  font-size: 14px;
-  margin: 5px 0;
+.tooltip-text {
+  /* position: absolute; */
+  color: black;
+  border: 1px solid black;
+  font-size: 12px;
+  width: 120px;
+  text-align: center;
+}
+.Top {
+  position: absolute;
+  top: -50px;
+}
+.Right {
+  position: absolute;
+  left: 130px;
+  top: 2px;
+  right: -120px;
+  background-color: #fffbca;
+  z-index: 1;
+}
+.Left {
+  position: absolute;
+  right: 130px;
+  top: 2px;
+  background-color: #fffbca;
+  z-index: 1;
+}
+.Bottom {
+  position: absolute;
+  bottom: -50px;
 }

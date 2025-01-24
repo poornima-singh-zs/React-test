@@ -1,53 +1,131 @@
+import { useRef } from "react";
+import "./App.css";
+import React, { useState } from "react";
+import { useEffect } from "react";
+function App() {
+  const tooltips = [
+    {
+      text: "This is my Button 1",
+      alignment: "Left",
+    },
+    {
+      text: "This is my Hover 1",
+      alignment: "Top",
+    },
+    {
+      text: "This is my Button 2",
+      alignment: "Right",
+    },
+    {
+      text: "This is my Hover 2",
+      alignment: "Left",
+    },
+    {
+      text: "This is my Button 3",
+      alignment: "Top",
+    },
 
-import React , { useState } from 'react'
-// import Test from './React-test Day10/Test';
-import './App.css'
-import ChildComp from '../src/React-test Day11/ChildComp'
+    {
+      text: "This is my Hover 3",
+      alignment: "Right",
+    },
+    {
+      text: "This is my Button 4",
+      alignment: "Left",
+    },
+    {
+      text: "This is my Hover 4",
+      alignment: "Bottom",
+    },
+    {
+      text: "This is my Button 5",
+      alignment: "Right",
+    },
+  ];
 
-
-
-export default function App() {
-  // const items=[
-  //   {
-  //     title:"Hello Poornima",
-  //     description: "Hello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh ",
-      
-  //   }
-  // ];
-
-  const [numDice, setNumDice] = useState(0);
-  const [showDice, setShowDice] = useState(0);
-  const [error, setError] = useState('');
-
-  const handleRollDice = () => {
-    if(numDice>=1 && numDice<=6){
-      setShowDice(numDice);
-      setError('');
-  }
-  else{
-    setError('Please enter a number between 1 and 6');
-  }
-}
-  
   return (
-    <div className='parent' >
-    
-    <input
-        type="number"
-        min="1"
-        max="6"
-        value={numDice}
-        onChange={(e) => setNumDice(Number(e.target.value))}
-        placeholder="Enter number of dice"
-      />
-       {error && <p className="error">{error}</p>} 
-    <button className='roll' onClick={handleRollDice}> Roll</button>
-    <ChildComp  numDice={showDice}/>
-    {/* <Test title={items[0].title} description={items[0].description} /> */}
-    </div>
-  )
+    <main>
+      {Array.from({ length: 9 }).map((_, i) => (
+        <div className="card">
+          {i % 2 === 0 ? (
+            <Button text={tooltips[i].text} alignment={tooltips[i].alignment} />
+          ) : (
+            <Hover text={tooltips[i].text} alignment={tooltips[i].alignment} />
+          )}
+        </div>
+      ))}
+    </main>
+  );
 }
 
+export default App;
 
+const Tooltip = ({ isButton = false, text, children, alignment }) => {
+  const [visible, setVisible] = useState(false);
 
+  const buttonRef = useRef();
+  const getAlignmentClass = (alignment) => {
+    switch (alignment) {
+      case "Top":
+        return "Top";
+      case "Bottom":
+        return "Bottom";
+      case "Left":
+        return "Left";
+      case "Right":
+        return "Right";
+    }
+  };
 
+  useEffect(() => {
+    let handler = (e) => {
+      if (!buttonRef.current.contains(e.target)) setVisible(false);
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []);
+
+  return (
+    <div
+      className="tooltip-container "
+      ref={buttonRef}
+      {...(isButton
+        ? {
+          onClick: () => {
+            setVisible((prev) => !prev);
+          },
+        }
+        : {
+          onMouseOver: () => setVisible(true),
+          onMouseOut: () => setVisible(false),
+        })}
+    >
+      {children}
+
+      {visible && (
+        <div className={`tooltip-text ${getAlignmentClass(alignment)}`}>
+          {text}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const Button = ({ text, alignment }) => {
+  return (
+    <Tooltip text={text} alignment={alignment} isButton={true}>
+      <button>Click me</button>
+    </Tooltip>
+  );
+};
+
+const Hover = ({ text, alignment }) => {
+  return (
+    <Tooltip text={text} alignment={alignment}>
+      <span>Hover over me</span>
+    </Tooltip>
+  );
+};
