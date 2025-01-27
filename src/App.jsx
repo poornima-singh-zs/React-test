@@ -1,53 +1,27 @@
 
-import React , { useState } from 'react'
-// import Test from './React-test Day10/Test';
-import './App.css'
-import ChildComp from '../src/React-test Day11/ChildComp'
+import React, { useContext } from "react";
+import ChildComponent1 from "./Day14/ChildComponent1";
+import ChildComponent2 from "./Day14/ChildComponent2";
+import ChildComponent3 from "./Day14/ChildComponent3";
+import ChildComponent4 from "./Day14/ChildComponent4";
+import MainComponent from "./Day14/MainComponent";
+import {ThemeProvider} from "./Day14/ThemeProvider";
 
 
-
-export default function App() {
-  // const items=[
-  //   {
-  //     title:"Hello Poornima",
-  //     description: "Hello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh ",
-      
-  //   }
-  // ];
-
-  const [numDice, setNumDice] = useState(0);
-  const [showDice, setShowDice] = useState(0);
-  const [error, setError] = useState('');
-
-  const handleRollDice = () => {
-    if(numDice>=1 && numDice<=6){
-      setShowDice(numDice);
-      setError('');
-  }
-  else{
-    setError('Please enter a number between 1 and 6');
-  }
-}
-  
+const App = () => {
   return (
-    <div className='parent' >
-    
-    <input
-        type="number"
-        min="1"
-        max="6"
-        value={numDice}
-        onChange={(e) => setNumDice(Number(e.target.value))}
-        placeholder="Enter number of dice"
-      />
-       {error && <p className="error">{error}</p>} 
-    <button className='roll' onClick={handleRollDice}> Roll</button>
-    <ChildComp  numDice={showDice}/>
-    {/* <Test title={items[0].title} description={items[0].description} /> */}
-    </div>
-  )
-}
+    <ThemeProvider>
+      <MainComponent>
+        <ChildComponent1 />
+        <ChildComponent2 />
+        <ChildComponent3 />
+        <ChildComponent4 />
+      </MainComponent>
+    </ThemeProvider>
+  );
+};
 
+export default App;
 
 
 
