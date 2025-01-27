@@ -15,13 +15,13 @@ function App() {
     };
 
     if (isSidebarVisible) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("click", handleClickOutside);
     } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [isSidebarVisible]);
 
@@ -46,8 +46,12 @@ function App() {
               <Button
                 text={tooltips[i].text}
                 alignment={tooltips[i].alignment}
-                onClick={() => {
-                  if (i === 4) setIsSidebarVisible(true);
+                onClick={(e) => {
+                  if (i === 4) 
+                  {
+                    e.stopPropagation();
+                    setIsSidebarVisible(true);
+                  }
                 }}
               />
             ) : (
@@ -61,7 +65,7 @@ function App() {
         <button className="close-btn" onClick={() => setIsSidebarVisible(false)}>
           Close
         </button>
-        <p>Sidebar Content</p>
+        <p style={{color:"black"}}>Sidebar Content</p>
       </div>
     </div>
   );
@@ -92,10 +96,10 @@ const Tooltip = ({ isButton = false, text, children, alignment }) => {
         let handler = (e) => {
             if (!buttonRef.current.contains(e.target)) setVisible(false);
         };
-        document.addEventListener("mousedown", handler);
+        document.addEventListener("click", handler);
 
         return () => {
-            document.removeEventListener("mousedown", handler);
+            document.removeEventListener("click", handler);
         };
     }, []);
 
@@ -130,7 +134,7 @@ const Button = ({ text, alignment, onClick }) => {
 const Hover = ({ text, alignment }) => {
   return (
     <Tooltip text={text} alignment={alignment}>
-      <span>Hover over me</span>
+      <span>Hover over me </span>
     </Tooltip>
   );
 };

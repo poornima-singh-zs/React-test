@@ -87,6 +87,7 @@ span {
   gap: 5px;
   height: 100%;
   width: 100%;
+  background: var(--color-purple);
   
 }
 
@@ -108,7 +109,7 @@ span {
   transition: right 0.3s ease-in-out; 
 }
 
-.sidebar.visible {
+.visible {
   right: 0; 
 }
 
