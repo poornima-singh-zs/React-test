@@ -1,9 +1,9 @@
 import { useRef } from "react";
-import "./App1.css";
+import "./Day14.css";
 import React, { useState } from "react";
 import { useEffect } from "react";
 
-function App1() {
+function Day14() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const sidebarRef = useRef(null);
 
@@ -71,7 +71,7 @@ function App1() {
   );
 }
 
-export default App1;
+export default Day14;
 
 const Tooltip = ({ isButton = false, text, children, alignment }) => {
   const [visible, setVisible] = useState(false);

@@ -1,5 +1,6 @@
 import React from "react";
-import App1 from "./App1"
+
+import Day14 from "./Day14";
 export default function App(){
-    <App1/>
+   <Day14/>
 }
