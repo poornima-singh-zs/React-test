@@ -1,12 +1,22 @@
 import React from "react";
 
-import React, {useState} from "react";
-import Throttle from "./Day14-Throttle/Throttle";
+import App1 from "./App1";
 
-function App(){
+export default function App (){
     return(
-        <Throttle></Throttle>
+        <App1/>
     )
 }
-export default App;
+
+
+// import React, {useState} from "react";
+// import Throttle from "./Day14-Throttle/Throttle";
+
+// function App(){
+//     return(
+//         <Throttle></Throttle>
+//     )
+// }
+// export default App;
+
 
