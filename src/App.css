@@ -42,8 +42,7 @@
   .read-the-docs {
     color: #888;
   }
-=======
-  }
+
   .logo:hover {
     filter: drop-shadow(0 0 2em #646cffaa);
   }
@@ -73,7 +72,6 @@
   .read-the-docs {
     color: #888;
   }
-=======
 
 #root {
     max-width: 1280px;
@@ -117,6 +115,7 @@
   .read-the-docs {
     color: #888;
   }
+ .random{
   margin-top: 40px;
   background-color: beige;
   height: 100vh;
@@ -124,7 +123,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-}
+ }
 
 input {
   margin: 10px;
