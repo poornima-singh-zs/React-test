@@ -1,16 +1,16 @@
+import React from "react";
 
-import React  from 'react'
+ import {SearchEngine } from "../src/Day13-task2/SearchEngine"
 
-import {SearchEngine } from "../src/Day13-task2/SearchEngine"
+import React, {useState} from "react";
+import Throttle from "./Day14-Throttle/Throttle";
 
-
-export default function App() {
-
-return(
-  <SearchEngine></SearchEngine>
-)
- }
-
-
+function App(){
+    return(
+        <Throttle></Throttle>
+<SearchEngine></SearchEngine>
+    )
+}
+export default App;
 
 
