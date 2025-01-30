@@ -1,10 +1,9 @@
-
 import React , { useState } from 'react'
 // import Test from './React-test Day10/Test';
 import './App.css'
-import ChildComp from './React-test Day11/ChildComp'
+// import ChildComp from './React-test Day11/ChildComp'
 import {Content} from './Day12/Content'
-import { Accordion } from './Day12/Accordian'
+import { Accordion } from './Day12/Accordian.jsx'
 
 
 export default function Day12() {

@@ -48,9 +48,9 @@ function App1() {
       {Array.from({ length: 9 }).map((_, i) => (
         <div className="card">
           {i % 2 === 0 ? (
-            <Button text={tooltips[i].text} alignment={tooltips[i].alignment} />
+            <Button key = {i}text={tooltips[i].text} alignment={tooltips[i].alignment} />
           ) : (
-            <Hover text={tooltips[i].text} alignment={tooltips[i].alignment} />
+            <Hover key = {i+1}text={tooltips[i].text} alignment={tooltips[i].alignment} />
           )}
         </div>
       ))}
