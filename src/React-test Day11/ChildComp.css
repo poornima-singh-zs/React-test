@@ -12,7 +12,6 @@
     min-height: 200px;
     justify-items: center; 
     align-items: center; 
-    position: relative;
 }
 
 .dice-image {
@@ -20,9 +19,7 @@
     height: 60px;
 }
 
-  .spinner{
-    position: absolute;
- }
+  
   
  
   
