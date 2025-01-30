@@ -19,15 +19,11 @@ export default function App() {
   const [showDice, setShowDice] = useState(0);
   const [error, setError] = useState('');
 
-
   const handleRollDice = () => {
     if(numDice>=1 && numDice<=6){
-      
       setShowDice(numDice);
       setError('');
-      
-    } 
-  
+  }
   else{
     setError('Please enter a number between 1 and 6');
   }
@@ -41,12 +37,11 @@ export default function App() {
         min="1"
         max="6"
         value={numDice}
-        onChange={(e) => setNumDice((e.target.value))}
+        onChange={(e) => setNumDice(Number(e.target.value))}
         placeholder="Enter number of dice"
       />
        {error && <p className="error">{error}</p>} 
     <button className='roll' onClick={handleRollDice}> Roll</button>
-    
     <ChildComp  numDice={showDice}/>
     {/* <Test title={items[0].title} description={items[0].description} /> */}
     </div>
