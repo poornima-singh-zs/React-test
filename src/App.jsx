@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import "./App.css"
-import App1 from './App1.jsx'
+import "./Day12.css"
+
+import Day12 from "./Day12.jsx";
 
 export default function App() {
     return (
-        <App1 />
+        <Day12/>
     )
 }

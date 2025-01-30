@@ -7,7 +7,7 @@ import {Content} from './Day12/Content'
 import { Accordion } from './Day12/Accordian'
 
 
-export default function App1() {
+export default function Day12() {
   // const items=[
   //   {
   //     title:"Hello Poornima",
