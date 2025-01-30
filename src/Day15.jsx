@@ -8,7 +8,7 @@ import MainComponent from "./Day15/MainComponent";
 import {ThemeProvider} from "./Day15/ThemeProvider";
 
 
-const App1= () => {
+const Day15= () => {
   return (
     <ThemeProvider>
       <MainComponent>
@@ -21,7 +21,7 @@ const App1= () => {
   );
 };
 
-export default App1;
+export default Day15;
 
 
 
