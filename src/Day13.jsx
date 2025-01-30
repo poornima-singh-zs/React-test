@@ -3,7 +3,7 @@ import React , { useState } from 'react'
 
 // import './App.css'
 import Modal from './Day13/Modal'
-
+import "./Day13.css"
 
 
 export default function Day13() {
