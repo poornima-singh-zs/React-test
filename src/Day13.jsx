@@ -6,7 +6,7 @@ import Modal from './Day13/Modal'
 
 
 
-export default function App1() {
+export default function Day13() {
   // const items=[
   //   {
   //     title:"Hello Poornima",
