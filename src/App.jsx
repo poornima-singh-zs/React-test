@@ -1,4 +1,3 @@
-import React from "react";
 
 // import {SearchEngine } from "../src/Day13-task2/SearchEngine"
 // import "./Day12.css"
