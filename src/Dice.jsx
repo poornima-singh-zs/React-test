@@ -2,7 +2,7 @@
 import   { useState } from 'react'
 // import Test from './React-test Day10/Test';
 import './Dice.css'
-// import ChildComp from './React-test Day11/ChildComp'
+import ChildComp from './React-test Day11/ChildComp'
 
 
 
@@ -16,7 +16,7 @@ export default function Dice() {
   // ];
 
   const [numDice, setNumDice] = useState(0);
-  const [ setShowDice] = useState(0);
+  const [showDice, setShowDice] = useState(0);
   const [error, setError] = useState('');
 
 
@@ -47,7 +47,7 @@ export default function Dice() {
        {error && <p className="error">{error}</p>} 
     <button className='roll' onClick={handleRollDice}> Roll</button>
     
-    {/* <ChildComp  numDice={showDice}/> */}
+    <ChildComp  numDice={showDice}/>
     {/* <Test title={items[0].title} description={items[0].description} /> */}
     </div>
   )

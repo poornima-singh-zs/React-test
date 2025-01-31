@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+
 
 export default function Throttle(){
 
@@ -6,6 +6,7 @@ export default function Throttle(){
   {
     let id,id2;
     let count = 0;
+    // eslint-disable-next-line no-unused-vars
     function innerfn(event)
     {
       if(!id)

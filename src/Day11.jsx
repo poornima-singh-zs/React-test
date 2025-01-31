@@ -1,5 +1,5 @@
 
-import React , { useState } from 'react'
+import { useState } from 'react'
 // import Test from './React-test Day10/Test';
 import './Day11.css'
 import ChildComp from './React-test Day11/ChildComp'
