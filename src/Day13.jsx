@@ -1,10 +1,9 @@
 
-import React , { useState } from 'react'
+import { useState } from 'react'
 
 // import './App.css'
-import Modal from './Day13/Modal'
-import "./Day13.css"
-
+import Modal from '../src/Day13/Modal'
+import "../src/Day13/Modal.css"
 
 export default function Day13() {
   // const items=[
@@ -58,8 +57,6 @@ const closeModal = () => setIsModalOpen(false);
 return(
   <Modal isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal}></Modal>
 )
-
-
 }
 
 

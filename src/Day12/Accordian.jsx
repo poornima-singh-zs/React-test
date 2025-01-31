@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import './Accordian.css'
+// eslint-disable-next-line react/prop-types
 export const Accordion = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
 

@@ -1,4 +1,3 @@
-import React , { useState } from 'react'
 // import Test from './React-test Day10/Test';
 import './App.css'
 // import ChildComp from './React-test Day11/ChildComp'
@@ -57,6 +56,7 @@ return (
     <br></br>
     <div className="accordion">
       {Content.map(({ title, content }) => (
+        // eslint-disable-next-line react/jsx-key
         <Accordion title={title} content={content} />
       ))}
     </div>

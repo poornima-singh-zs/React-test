@@ -1,5 +1,5 @@
 
-import React , { useState } from 'react'
+import   { useState } from 'react'
 // import Test from './React-test Day10/Test';
 import './Dice.css'
 // import ChildComp from './React-test Day11/ChildComp'
@@ -16,7 +16,7 @@ export default function Dice() {
   // ];
 
   const [numDice, setNumDice] = useState(0);
-  const [showDice, setShowDice] = useState(0);
+  const [ setShowDice] = useState(0);
   const [error, setError] = useState('');
 
 

@@ -4,9 +4,9 @@
 // import Day14 from "./Day14.jsx";
 // import "./Day14.css"
 // import Day12 from "./Day12.jsx";
-  import Day13 from "./Day13";
-import React, {useState} from "react";
-import Dice from "./Dice.jsx";
+import Day13 from "./Day13";
+// import React, {useState} from "react";
+// import Dice from "./Dice.jsx";
 // import App1 from "./App1.jsx";
 // import "./App1.css"
 // import Throttle from "./Day14-Throttle/Throttle";
@@ -14,7 +14,7 @@ import Dice from "./Dice.jsx";
 function App(){
   
    return (
-<Day13/>
+     <Day13/>
     )
   
 //    return (
