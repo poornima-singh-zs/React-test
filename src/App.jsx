@@ -1,53 +1,35 @@
 
-import React , { useState } from 'react'
-// import Test from './React-test Day10/Test';
-import './App.css'
-import ChildComp from '../src/React-test Day11/ChildComp'
+import {SearchEngine } from "../src/Day13-task2/SearchEngine"
 
+// import Day14 from "./Day14.jsx";
 
+// import Day12 from "./Day12.jsx";
+// import Day11 from "./Day11";
+// import Day15 from "./Day15";
 
-export default function App() {
-  // const items=[
-  //   {
-  //     title:"Hello Poornima",
-  //     description: "Hello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh  ello my name is poornima singh ello my name is poornima singh ",
-      
-  //   }
-  // ];
+// import Day13 from "./Day13";
+// import React, {useState} from "react";
+// import Dice from "./Dice.jsx";
+// import App1 from "./App1.jsx";
+// import "./App1.css"
+// import Throttle from "./Day14-Throttle/Throttle";
 
-  const [numDice, setNumDice] = useState(0);
-  const [showDice, setShowDice] = useState(0);
-  const [error, setError] = useState('');
-
-  const handleRollDice = () => {
-    if(numDice>=1 && numDice<=6){
-      setShowDice(numDice);
-      setError('');
-  }
-  else{
-    setError('Please enter a number between 1 and 6');
-  }
-}
+function App(){
   
-  return (
-    <div className='parent' >
-    
-    <input
-        type="number"
-        min="1"
-        max="6"
-        value={numDice}
-        onChange={(e) => setNumDice(Number(e.target.value))}
-        placeholder="Enter number of dice"
-      />
-       {error && <p className="error">{error}</p>} 
-    <button className='roll' onClick={handleRollDice}> Roll</button>
-    <ChildComp  numDice={showDice}/>
-    {/* <Test title={items[0].title} description={items[0].description} /> */}
-    </div>
-  )
+   return (
+    <>
+     {/* <Day11/>  */}
+     {/* <Dice/> */}
+     {/* <Day12/> */}
+     {/* <Day13/> */}
+      {/* <Day14/> */}
+      {/* <App1/> */}
+     {/* <Day15/> */}
+     {/* <Throttle /> */}
+     <SearchEngine />
+  
+   </>
+   )
+  
 }
-
-
-
-
+export default App;
